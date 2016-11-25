@@ -12,10 +12,11 @@
   <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
   <script style="javascript">
 	function switchRB(){
-		var rose = document.getElementById('rose');
+		var rose = document.getElementById('roseBody');
 		var butterfly = document.getElementById('butterfly');
 		rose.style.display = 'none';
 		butterfly.style.display = 'block';
+		
 	};
 	setTimeout(switchRB,8000);
 	
@@ -35,55 +36,57 @@
 </style>   
   
 </head>
-<body class='linear'>
-<audio autoplay="autoplay" src="http://sc.111ttt.com/up/mp3/350542/2F24FDA66802174B0628C5CF6ECB2B5B.mp3" loop="loop" controls="controls">
-Your browser does not support the audio element.
-</audio>
-<div style='position:relative; margin-right:30px;margin-bottom:20px;'><font size='2'>&nbsp;Edit by HJH-20161125</font></div>
-<div id="rose" style="display:black;margin:10px 30%;">
-	<font size='4'>欧阳佩生日快乐-20161127</font>
-	
-	<canvas id="c" height="500" width="500"></canvas>
-	<script>
-		var b = document.body;
-		var c = document.getElementsByTagName('canvas')[0];
-		var a = c.getContext('2d');
-		document.body.clientWidth; 
-	</script> 
-	<script>
-	// start of submission //
-		with(m = Math) C = cos,
-	S = sin,
-	P = pow,
-	R = random;
-	c.width = c.height = f = 500;
-	h = -250;
-	function p(a, b, c) {
-		if (c > 60) return [S(a * 7) * (13 + 5 / (.2 + P(b * 4, 4))) - S(b) * 50, b * f + 50, 625 + C(a * 7) * (13 + 5 / (.2 + P(b * 4, 4))) + b * 400, a * 1 - b / 2, a];
-		A = a * 2 - 1;
-		B = b * 2 - 1;
-		if (A * A + B * B < 1) {
-			if (c > 37) {
-				n = (j = c & 1) ? 6 : 4;
-				o = .5 / (a + .01) + C(b * 125) * 3 - a * 300;
-				w = b * h;
-				return [o * C(n) + w * S(n) + j * 610 - 390, o * S(n) - w * C(n) + 550 - j * 350, 1180 + C(B + A) * 99 - j * 300, .4 - a * .1 + P(1 - B * B, -h * 6) * .15 - a * b * .4 + C(a + b) / 5 + P(C((o * (a + 1) + (B > 0 ? w: -w)) / 25), 30) * .1 * (1 - B * B), o / 1e3 + .7 - o * w * 3e-6]
+<body>
+<div class='linear' id ='roseBody'>
+	<audio autoplay="autoplay" src="http://sc.111ttt.com/up/mp3/350542/2F24FDA66802174B0628C5CF6ECB2B5B.mp3" loop="loop" controls="controls">
+	Your browser does not support the audio element.
+	</audio>
+	<div style='position:relative; margin-right:30px;margin-bottom:20px;'><font size='2'>&nbsp;Edit by HJH-20161125</font></div>
+	<div id="rose" style="display:black;margin:10px 30%;">
+		<font size='4'>欧阳佩生日快乐-20161127</font>
+		
+		<canvas id="c" height="500" width="500"></canvas>
+		<script>
+			var b = document.body;
+			var c = document.getElementsByTagName('canvas')[0];
+			var a = c.getContext('2d');
+			document.body.clientWidth; 
+		</script> 
+		<script>
+		// start of submission //
+			with(m = Math) C = cos,
+		S = sin,
+		P = pow,
+		R = random;
+		c.width = c.height = f = 500;
+		h = -250;
+		function p(a, b, c) {
+			if (c > 60) return [S(a * 7) * (13 + 5 / (.2 + P(b * 4, 4))) - S(b) * 50, b * f + 50, 625 + C(a * 7) * (13 + 5 / (.2 + P(b * 4, 4))) + b * 400, a * 1 - b / 2, a];
+			A = a * 2 - 1;
+			B = b * 2 - 1;
+			if (A * A + B * B < 1) {
+				if (c > 37) {
+					n = (j = c & 1) ? 6 : 4;
+					o = .5 / (a + .01) + C(b * 125) * 3 - a * 300;
+					w = b * h;
+					return [o * C(n) + w * S(n) + j * 610 - 390, o * S(n) - w * C(n) + 550 - j * 350, 1180 + C(B + A) * 99 - j * 300, .4 - a * .1 + P(1 - B * B, -h * 6) * .15 - a * b * .4 + C(a + b) / 5 + P(C((o * (a + 1) + (B > 0 ? w: -w)) / 25), 30) * .1 * (1 - B * B), o / 1e3 + .7 - o * w * 3e-6]
+				}
+				if (c > 32) {
+					c = c * 1.16 - .15;
+					o = a * 45 - 20;
+					w = b * b * h;
+					z = o * S(c) + w * C(c) + 620;
+					return [o * C(c) - w * S(c), 28 + C(B * .5) * 99 - b * b * b * 60 - z / 2 - h, z, (b * b * .3 + P((1 - (A * A)), 7) * .15 + .3) * b, b * .7]
+				}
+				o = A * (2 - b) * (80 - c * 2);
+				w = 99 - C(A) * 120 - C(b) * ( - h - c * 4.9) + C(P(1 - b, 7)) * 50 + c * 2;
+				z = o * S(c) + w * C(c) + 700;
+				return [o * C(c) - w * S(c), B * 99 - C(P(b, 7)) * 50 - c / 3 - z / 1.35 + 450, z, (1 - b / 1.2) * .9 + a * .1, P((1 - b), 20) / 4 + .05]
 			}
-			if (c > 32) {
-				c = c * 1.16 - .15;
-				o = a * 45 - 20;
-				w = b * b * h;
-				z = o * S(c) + w * C(c) + 620;
-				return [o * C(c) - w * S(c), 28 + C(B * .5) * 99 - b * b * b * 60 - z / 2 - h, z, (b * b * .3 + P((1 - (A * A)), 7) * .15 + .3) * b, b * .7]
-			}
-			o = A * (2 - b) * (80 - c * 2);
-			w = 99 - C(A) * 120 - C(b) * ( - h - c * 4.9) + C(P(1 - b, 7)) * 50 + c * 2;
-			z = o * S(c) + w * C(c) + 700;
-			return [o * C(c) - w * S(c), B * 99 - C(P(b, 7)) * 50 - c / 3 - z / 1.35 + 450, z, (1 - b / 1.2) * .9 + a * .1, P((1 - b), 20) / 4 + .05]
 		}
-	}
-	setInterval('for(i=0;i<1e4;i++)if(s=p(R(),R(),i%46/.74)){z=s[2];x=~~(s[0]*f/z-h);y=~~(s[1]*f/z-h);if(!m[q=y*f+x]|m[q]>z)m[q]=z,a.fillStyle="rgb("+~(s[3]*h)+","+~(s[4]*h)+","+~(s[3]*s[3]*-80)+")",a.fillRect(x,y,1,1)}', 0)// end of submission //
-	</script>
+		setInterval('for(i=0;i<1e4;i++)if(s=p(R(),R(),i%46/.74)){z=s[2];x=~~(s[0]*f/z-h);y=~~(s[1]*f/z-h);if(!m[q=y*f+x]|m[q]>z)m[q]=z,a.fillStyle="rgb("+~(s[3]*h)+","+~(s[4]*h)+","+~(s[3]*s[3]*-80)+")",a.fillRect(x,y,1,1)}', 0)// end of submission //
+		</script>
+	</div>
 </div>
 <div id="butterfly" style="display:none">
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" class="svg-defs">
